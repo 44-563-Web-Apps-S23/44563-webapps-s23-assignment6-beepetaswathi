@@ -10,10 +10,10 @@
 
 <form>
     <label for="form1_age">The hidden painter name</label>
-    <input type ="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value=Monet> <br>
+    <input type ="password" id="hidden" name="form1_age" min=10 max=50 step=2 value=Monet> <br>
 
     <label for="form1_nick">Guess the painter</label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <input type ="text" id="checkInput"  name="form1_nick" autofocus> <br>
 
     <input type="button" onclick="checkPainter()" value="Check the guess">
 </form>
@@ -26,8 +26,8 @@ var good=0;
 var oops=0;
 function  checkPainter(){
 
-    value1= document.getElementById("form1_age").value
-    value2 = document.getElementById("form1_nick").value
+    value1= document.getElementById("hidden").value
+    value2 = document.getElementById("checkInput").value
     if(value1==value2){
         good=good+1
         alert("“You got it right")
