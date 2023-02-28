@@ -40,5 +40,31 @@ function  checkPainter(){
 }
 </script>
 
+<div class="container">
+    <img src="bambusa.jpg" id="picture" width="100" height="100" onclick="selectImage()">
+</div>
+<script>
+    var img = document.getElementById("picture")
+    function selectImage(){
+        switch(useImage){
+            case 1:
+                img.src = "bambusa.jpg"
+                useImage++
+                break
+            case 2:
+                img.src = "enkianthus.jpg"
+                useImage++
+                break
+            case 3:
+                img.src ="Euphorbia.jpg"
+                useImage++
+                break
+            default:
+        }
+    }
+
+</script>
+
+
 </body>
 </html> 
