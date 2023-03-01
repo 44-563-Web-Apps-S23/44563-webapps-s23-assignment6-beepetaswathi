@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Check_boxes of Candy's</title>
+    </head>
+ 
+<body>
+
+<h2>Beepeta Swathi chooses candy</h2>
+
+<form>
+    <input type="checkbox" id="chocolate"name="box 01"
+    value="True">
+    <label for="checkbox1_butter">Dark Chocolate</label><br>
+
+    <input type="checkbox" id="Dry fruits"name="box 02"
+    value="True">
+    <label for="checkbox1_anjeer">Nuts</label><br>
+
+    <input type="checkbox" id="chewingGum"name="box 03"
+    value="False">
+    <label for="checkbox1_strawberry">Chewy</label><br>
+
+    <input type="button" class="btn btn-primary" onclick="selectBox()" value="Select a box">
+</form>
+
+
+<p id="result">checkbox of candy's result will be shown here </p>
+
+<div class="form-group">
+    <form>
+        <label for="form1">Enter the size</label>
+        <input type="text" id="size" value="size" name="form1" autofocus><br>
+
+        <label for="form2">Enter price</label>
+        <input type="text" id="price" name="form2" autofocus><br>
+
+        <input type="button" class="btn btn-primary" onclick="updateBox()" value="Update the box">
+
+    </form>
+    </div>
+    <p id="results">checkbox of candy's result will be replaced here</p>
+
+    <script>
+        my_candy_box={}
+        function selectBox(){
+            my_candy_box={}
+            
+            my_candy_box.darkchocolate=document.getElementById("chocolate").checked
+            my_candy_box.nuts=document.getElementById("Dry fruits").checked
+            my_candy_box.chewy=document.getElementById("chewingGum").checked
+            document.getElementById("value").innerHTML=JSON.stringify(my_candy_box)
+        }
+        function updateBox(){
+
+            my_candy_box.size=document.getElementById("size").value
+            my_candy_box.price=document.getElementById("price").value
+
+
+            document.getElementById("result").innerHTML=JSON.stringify(my_candy_box)
+
+
+        }
+    </script>
+
+
+
+
+
+</div>
+
+<script> 
+
+
+
+</script>
+
+</body>
+</html> 
