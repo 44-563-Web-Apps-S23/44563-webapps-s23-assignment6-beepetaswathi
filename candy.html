@@ -9,17 +9,17 @@
 <h2>Beepeta Swathi chooses candy</h2>
 
 <form>
-    <input type="checkbox" id="chocolate"name="box 01"
+    <input type="checkbox" id="cb1_dark"name="box 01"
     value="True">
-    <label for="checkbox1_cheese">Dark Chocolate</label><br>
+    <label for="cb1_dark">Dark Chocolate</label><br>
 
-    <input type="checkbox" id="Dry fruits"name="box 02"
+    <input type="checkbox" id="cb1_Nuts"name="box 02"
     value="True">
-    <label for="checkbox1_olives">Nuts</label><br>
+    <label for="cb1_Nuts">Nuts</label><br>
 
-    <input type="checkbox" id="chewingGum"name="box 03"
+    <input type="checkbox" id="cb1_Chewy"name="box 03"
     value="False">
-    <label for="checkbox1_onions">Chewy</label><br>
+    <label for="cb1_Chewy">Chewy</label><br>
 
     <input type="button" class="btn btn-primary" onclick="selectBox()" value="Select a box">
 </form>
@@ -46,9 +46,9 @@
         function selectBox(){
             my_candy_box={}
             
-            my_candy_box.darkchocolate=document.getElementById("chocolate").checked
-            my_candy_box.nuts=document.getElementById("Dry fruits").checked
-            my_candy_box.chewy=document.getElementById("chewingGum").checked
+            my_candy_box.darkchocolate=document.getElementById("cb1_dark").checked
+            my_candy_box.nuts=document.getElementById("cb1_Nuts").checked
+            my_candy_box.chewy=document.getElementById("cb1_Chewy").checked
             document.getElementById("value").innerHTML=JSON.stringify(my_candy_box)
         }
         function updateBox(){
