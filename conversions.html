@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>Conversion of currency</head>
+ 
+<body>
+
+<h2>Beepeta swathi shows currency conversions</h2>
+
+<form>
+    <label for="form1_age">Enter base amount </label>
+    <input type ="number" id="base_element" name="form1_age" min=10 max=50 step=2 value=50> <br>
+
+    <label for="form1_nick">Enter the conversion rate </label>
+    <input type ="number" id="conversion_element" name="form1_nick" autofocus value=35> <br>
+
+    <input type="button" onclick="convert()" value="Show conversions">
+</form>
+
+
+<script> 
+
+var toShow =' ';
+function convert() {
+    var baseElement = document.getElementById("base_element").value;
+    var conversionElement = document.getElementById("conversion_element").value;
+    var base1 = baseElement;
+    for (let i=1; i<=5; i++) {
+        console.log(2 ** i);
+        
+        toShow = toShow + baseElement + ' is ' + Math.round(baseElement * conversionElement * 100) / 100 +';';
+        baseElement = base1 * (2 ** i);
+
+    }
+    document.getElementById("result").innerHTML = 'Conversions are: ' + toShow;
+
+}
+</script>
+<p id="result">About conversions currency</p>
+ 
+</body>
+</html> 
