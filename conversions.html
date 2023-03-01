@@ -35,7 +35,46 @@ function convert() {
 
 }
 </script>
-<p id="result">About conversions currency</p>
+<p id="result">About conversions of currency</p>
+
+
+<form>
+        <input type="radio" name="action" id="mean" name="average" value="mean">
+        <label for="mean">average</label><br>
+        <input type="radio" name="action" id="max" name="max" value="maximum">
+        <label for="max">Max</label><br>
+        <input type="radio" name="action" id="min" name="min" value="minimum">
+        <label for="min">Min</label><br>
+        
+</form>
+
+<input type="button" class="btn btn-primary" onclick="chooseOp()" value="Get values from radio group">
+<p id="result1">Radio buttons will be displayed here</p>
+
+<script>
+    function chooseOp(){
+        var baseElement = document.getElementById("base_element").value
+        var conversionElement = document.getElementById("conversion_element").value
+        var result = document.querySelector('input[name="action"]:checked').value
+        console.log('operation',result)
+        console.log('conversion',conversionElement)
+        var base1=baseElement
+        if(result == 'mean'){
+            document.getElementById("result1").innerHTML = "mean of "+baseElement+"and "+conversionElement+" is "+(parseInt(baseElement) + parseInt(conversionElement))/2;
+        }
+        else if(result == 'maximum'){
+        document.getElementById("result1").innerHTML = "max of"+baseElement+"and "+conversionElement+" is "+Math.max(baseElement, conversionElement);
+        }
+        else if(result == 'minimum'){
+        document.getElementById("result1").innerHTML = "min of"+baseElement+"and "+conversionElement+" is "+Math.min(baseElement, conversionElement);
+        }
+        
+
+    }
+</script>
+
+
+
  
 </body>
 </html> 
