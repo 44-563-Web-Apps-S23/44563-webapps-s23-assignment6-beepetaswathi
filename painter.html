@@ -1,71 +1,89 @@
 <!DOCTYPE html>
 <html>
- 
+
 <body>
+
     <head>
         <title>painter info</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+            integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+            crossorigin="anonymous"></script>
     </head>
 
-<h2>Painter entry Beepeta Swathi</h2>
+    <h2>Painter entry Beepeta Swathi</h2>
 
-<form>
-    <label for="form1_age">The hidden painter name</label>
-    <input type ="password" id="hidden" name="form1_age" min=10 max=50 step=2 value=Monet> <br>
+    <form>
+        <label for="form1_age">The hidden painter name</label>
+        <input type="password" id="hidden" name="form1_age" min=10 max=50 step=2 value=Monet> <br>
 
-    <label for="form1_nick">Guess the painter</label>
-    <input type ="text" id="checkInput"  name="form1_nick" autofocus> <br>
+        <label for="form1_nick">Guess the painter</label>
+        <input type="text" id="checkInput" name="form1_nick" autofocus> <br>
 
-    <input type="button" onclick="checkPainter()" value="Check the guess">
-</form>
+        <input id="btn" type="button" class="btn btn-primary" onclick="checkPainter()" value="Check the guess">
+    </form>
 
 
-<p id="result">Results will be shown here </p>
+    <p id="result">Results will be shown here </p>
 
-<script> 
-var good=0;
-var oops=0;
-function  checkPainter(){
+    <script>
+        var good = 0;
+        var oops = 0;
+        function checkPainter() {
 
-    value1= document.getElementById("hidden").value
-    value2 = document.getElementById("checkInput").value
-    if(value1==value2){
-        good=good+1
-        alert("You got it right")
-        result.innerHTML="Good count is :"+good
-    } else {
-        oops=oops+1
-        alert("Sorry")
-        result.innerHTML="Oops count is :"+oops
-    }
-}
-</script>
-
-<div class="container">
-    <img src="bambusa.jpg" id="picture" width="100" height="100" onclick="selectImage()">
-</div>
-<script>
-    var useImage = 1
-    var img = document.getElementById("picture")
-    function selectImage() {
-        switch(useImage) {
-            case 1:
-                img.src = "bambusa.jpg"
-                useImage++
-                break
-            case 2:
-                img.src = "enkianthus.jpg"
-                useImage++
-                break
-            case 3:
-                img.src = "Euphorbia.jpg"
-                useImage = 1
-                break
-            default:
+            value1 = document.getElementById("hidden").value
+            value2 = document.getElementById("checkInput").value
+            if (value1 == value2) {
+                good = good + 1
+                alert("You got it right")
+                result.innerHTML = "Good count is :" + good
+            } else {
+                oops = oops + 1
+                alert("Sorry")
+                result.innerHTML = "Oops count is :" + oops
+            }
+            if(oops==10){
+                alertButton()
+            }
+        }function alertButton(){
+            alert("Sorry,ran out of guesses.")
+            oops=0
+            result.innerHTML = "Wrong count: "+oops
         }
-    }
+    </script>
 
-</script>
+    <div class="container">
+        <img src="bambusa.jpg" id="picture" width="100" height="100" onclick="selectImage()">
+    </div>
+    <script>
+        var useImage = 1
+        var img = document.getElementById("picture")
+        function selectImage() {
+            switch (useImage) {
+                case 1:
+                    img.src = "bambusa.jpg"
+                    useImage++
+                    break
+                case 2:
+                    img.src = "enkianthus.jpg"
+                    useImage++
+                    break
+                case 3:
+                    img.src = "Euphorbia.jpg"
+                    useImage = 1
+                    break
+                default:
+            }
+        }
+
+    </script>
 
 
 </body>
-</html> 
+
+</html>
